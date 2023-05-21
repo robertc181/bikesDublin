@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Bike Stations in Dublin</h3>
+            <input type="search" [(ngModel)]="searchText">  
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let station of bikeStations | stationFilter: searchText">
+                        <td class="pt-3">{{ station.name }}</td>
+                        <button class="btn btn-info" (click)="showMoreInfo(station)">INFO</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-8">
+            <!-- <app-station-info [station]="station" ></app-station-info> -->
+            <app-station-info *ngIf="station.length > 0" [station]="station"></app-station-info>
+
+        </div>
+    </div>
+</div>

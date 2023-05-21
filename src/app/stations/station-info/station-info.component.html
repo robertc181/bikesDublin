@@ -1,0 +1,11 @@
+
+    <h1>{{ station[0].name }}</h1>
+ <p><span>Available Bikes</span> : {{ station[0].available_bikes }}</p>
+ <p><span>Available Bike Stands</span> : {{ station[0].available_bike_stands }}</p>
+
+ <div *ngIf="weather">
+  <h1>{{ weather.name }} Weather</h1>
+  <p>Temperature: {{ weather.main.temp }}</p>
+  <p>Humidity: {{ weather.main.humidity }}%</p>
+</div>
+
